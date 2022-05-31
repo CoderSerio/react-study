@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+.title {
+    font-weight: 900;
+    font-size: 64px;
+}
+.input {
+    width:  800px;
+    padding: 10px;
+}
