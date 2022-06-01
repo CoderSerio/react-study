@@ -15,16 +15,12 @@ export class GitSearch extends Component {
     constructor() {
         super()
         this.state = {
-            data: [
-                {
-                    headPortrait: 'https://portrait.gitee.com/uploads/avatars/user/2946/8839775_Serio_1631872042.png!avatar200',
-                    username: 'Serio',
-                }
-            ],
             userInfo: []
         }
+        
     }
     emitUserInfo = (data) => {
+        console.log('执行了！！！')
         this.setState({userInfo: data})
     }
     render(){
@@ -33,7 +29,7 @@ export class GitSearch extends Component {
                 <InputFiled emitUserInfo={this.emitUserInfo}></InputFiled>
                 <div style={boxCSS}>
                     {this.state.userInfo.map(one => {
-                        return <UserCard userInfo={one}></UserCard>
+                        return <UserCard userInfo={one} key={one.id}></UserCard>
                     })}
                 </div>
             </React.Fragment>

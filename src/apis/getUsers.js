@@ -10,6 +10,20 @@ function getUsersInfo (data, success, fail) {
     request.get()
 }
 
+function autoGetUsersInfo (success, fail) {
+    fetch('https://api.github.com/search/users?q=233', {
+            method:'GET'
+        }).then((res) => {
+            return res.json()
+        }).then((res) => {
+            // console.log(res)
+            success(res)
+        }).catch((err) => {
+            fail(err)
+        })
+}
+
 export {
-    getUsersInfo
+    getUsersInfo,
+    autoGetUsersInfo
 }

@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import CSS from './index.module.css'
-import { getUsersInfo } from "../../../apis/getUsers"
+import { getUsersInfo, autoGetUsersInfo } from "../../../apis/getUsers"
 
 
 export class InputFiled extends Component {
@@ -9,6 +9,11 @@ export class InputFiled extends Component {
         this.state = {
             inputValue: '',
         }
+        autoGetUsersInfo((res) => {
+            this.props.emitUserInfo(res.items)
+        }, (err) => {
+            console.warn(err)
+        })
     }
     handleInputChange = (e) => {
         this.setState({inputValue: e.target.value})
@@ -19,9 +24,10 @@ export class InputFiled extends Component {
                 q: this.state.inputValue
             }
             getUsersInfo(data, (res) => {
-                // this.setState({usersInfo: res.data.items})
                 // 向父级传递搜索结果
                 this.props.emitUserInfo(res.data.items)
+            }, (err) => {
+                console.warn(err)
             })
         }
     }
@@ -30,10 +36,16 @@ export class InputFiled extends Component {
             <React.Fragment>
                 <div className={CSS.container}>
                     <h1 className={CSS.title}>Github搜索案例</h1>
-                    <input className={CSS.input} placeholder='please enter a user name of GitHub' onChange={this.handleInputChange} onKeyDown={this.doSearch}></input>
+                    <input  className={CSS.input} 
+                            placeholder='please enter a user name of GitHub' 
+                            onChange={this.handleInputChange} 
+                            onKeyDown={this.doSearch}></input>
                 </div>
             </React.Fragment>
             
         )
+    }
+    componentDidMount() {
+        
     }
 }

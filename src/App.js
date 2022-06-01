@@ -19,8 +19,6 @@ function App() {
           <Route path='/review' component={Review}></Route>
           <Route path='/test1' component={Test1}></Route>
           <Route path='/github-search' component={GitSearch}></Route>
-          {/* <Route path='/' element={<Home></Home>}></Route> */}
-          {/* <Route path='/review' element={<Review></Review>}></Route> */}
       </div>
   );
 }
