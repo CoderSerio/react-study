@@ -11,7 +11,7 @@ const boxCSS = {
     flexWrap: 'wrap'
 }
 
-export class GitSearch extends Component {
+export default class GitSearch extends Component {
     constructor() {
         super()
         this.state = {
@@ -20,7 +20,7 @@ export class GitSearch extends Component {
         
     }
     emitUserInfo = (data) => {
-        console.log('执行了！！！')
+        // console.log('执行了！！！')
         this.setState({userInfo: data})
     }
     render(){

@@ -11,7 +11,7 @@ function getUsersInfo (data, success, fail) {
 }
 
 function autoGetUsersInfo (success, fail) {
-    fetch('https://api.github.com/search/users?q=233', {
+    fetch('https://api.github.com/search/users?q=furry', {
             method:'GET'
         }).then((res) => {
             return res.json()
