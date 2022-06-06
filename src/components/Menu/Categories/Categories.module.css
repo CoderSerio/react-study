@@ -1,0 +1,25 @@
+.btn-container {
+    text-align: center;
+    margin: 30px 0 70px 0;
+}
+
+.filter-btn{
+    min-width: 50px;
+    padding: 5px 20px;
+    border: 4px solid transparent;
+    border-radius: 5px;
+    font-size: 28px;
+    font-weight: 600;
+    color: darkgoldenrod;
+    border: none;
+    cursor: pointer;
+    margin: 0 20px;
+    transition: all 0.3s ease-out;
+}
+.filter-btn:hover {
+    background-color: darkgoldenrod;
+    color: #fff;
+}
+.filter-btn:focus {
+    border: 4px solid goldenrod;
+}

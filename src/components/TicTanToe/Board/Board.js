@@ -8,6 +8,7 @@ export default class Board extends Component {
         this.state = {
             squares: Array(9).fill(null),
             xIsNext: true,
+            // status: ''
         }
     }
     
