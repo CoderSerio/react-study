@@ -114,7 +114,7 @@ export default class Board extends Component {
         //        status: `游戏结束,${winner}胜利!`
         //    }) 
         // }
-        let status = '下一个是:' + (this.state.xIsNext ? 'O' : 'X')
+        let status = '下一个是:' + (this.state.xIsNext ? 'X' : 'O')
         let winner = this.calculateWinner()
         if(winner) {
             status = `游戏结束,${winner}胜利!` 
