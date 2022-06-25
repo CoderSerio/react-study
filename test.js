@@ -1,29 +1,12 @@
-const http = require('http')
+let history = [
+    // 第一步之前
+    {
+      squares: [
+        null, null, null,
+        null, null, null,
+        null, null, null,
+      ]
+    },
+]
 
-const server = http.createServer()
-
-server.on('request', (req, res) => {
-    let path = req.url.split('?')[0]
-    let query = req.url.split('?')[1]
-    
-    if(path == '/') {
-        res.end('hello')
-    } else if (path == '/hi') {
-        console.log(query)
-        res.end(JSON.stringify({
-            key: query.split('=')[0],
-            value: query.split('=')[1]
-        }))
-    }
-})
-
-server.listen(8080, () => {
-    console.log('在8080开启')
-})
-let obj = {
-    hi: ()=> {
-        console.log(123)
-    }
-}
-
-obj.hi()
+console.log(history.concat([{squares: [123, 233]}]))
